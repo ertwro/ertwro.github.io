@@ -1,2 +1,2 @@
 # First blogging web-page
-[presentations](https://ertwro.github.io/githubppt)
+[Presentations](https://ertwro.github.io/githubppt)
