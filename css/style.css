@@ -122,3 +122,25 @@ footer .social-links a {
 footer .social-links a:hover {
     color: #b2fefa;
 }
+
+/* Language Switcher Styles */
+nav ul li button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0; /* Remove default button padding */
+    font-family: inherit; /* Inherit font from nav */
+    font-size: 18px; /* Match nav link font size */
+    cursor: pointer;
+    text-decoration: none; /* In case of any default button underlines */
+}
+
+nav ul li button:hover {
+    color: #b2fefa; /* Match nav link hover color */
+}
+
+/* Optional: Add a little spacing if needed, can be adjusted */
+nav ul li button#lang-en,
+nav ul li button#lang-es {
+    margin-left: 5px; /* Small space to the left of each button */
+}
