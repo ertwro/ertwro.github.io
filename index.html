@@ -2,43 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Silva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="JP Silva - General Practitioner Physician with expertise in programming and fitness">
+    <meta name="keywords" content="JP Silva, General Practitioner, Physician, Programming, Fitness, Healthcare">
+    <meta name="author" content="JP Silva">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="JP Silva - General Practitioner & Developer">
+    <meta property="og:description" content="A dedicated General Practitioner Physician with a passion for programming and fitness">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ertwro.github.io/">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JP Silva - General Practitioner & Developer">
+    <meta name="twitter:description" content="A dedicated General Practitioner Physician with a passion for programming and fitness">
+
+    <title>JP Silva - General Practitioner & Developer</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/translate.js" as="script">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon (add your own favicon.ico to the root directory) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#1a2a6c">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Manifest for PWA capabilities (optional) -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
     <!-- Navigation Bar -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="logo">
             <h1>JP Silva</h1>
         </div>
-        <ul>
-            <li><a href="index.html"><span data-translate-key="nav_home">Home</span></a></li>
+
+        <!-- Mobile menu toggle button -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" aria-current="page"><span data-translate-key="nav_home">Home</span></a></li>
             <li><a href="about.html"><span data-translate-key="nav_about">About</span></a></li>
-            <li><a href="cvjpsa.pdf"><span data-translate-key="nav_cv">CV</span></a></li>
+            <li><a href="cvjpsa.pdf" target="_blank" rel="noopener"><span data-translate-key="nav_cv">CV</span></a></li>
             <li><a href="githubppt"><span data-translate-key="nav_presentations">Presentations</span></a></li>
             <li><a href="programming.html"><span data-translate-key="nav_programming">Programming</span></a></li>
             <li><a href="exercising.html"><span data-translate-key="nav_exercising">Exercising</span></a></li>
-            <li><button id="lang-en">EN</button></li>
-            <li><button id="lang-es">ES</button></li>
+            <li>
+                <button id="lang-en" aria-label="Switch to English" aria-pressed="true">EN</button>
+            </li>
+            <li>
+                <button id="lang-es" aria-label="Switch to Spanish" aria-pressed="false">ES</button>
+            </li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1><span data-translate-key="hero_title">Meet JP Silva</span></h1>
-        <p><span data-translate-key="hero_subtitle">A dedicated General Practitioner Physician with a passion for programming and fitness.</span></p>
-        <a href="cvjpsa.pdf" class="cta-button"><span data-translate-key="hero_cta_button">View My CV</span></a>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title"><span data-translate-key="hero_title">Meet JP Silva</span></h1>
+            <p><span data-translate-key="hero_subtitle">A dedicated General Practitioner Physician with a passion for programming and fitness.</span></p>
+            <a href="cvjpsa.pdf" class="cta-button" target="_blank" rel="noopener">
+                <span data-translate-key="hero_cta_button">View My CV</span>
+            </a>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="social-links">
-            <a href="https://github.com/ertwro" target="_blank">GitHub</a>
+            <a href="https://github.com/ertwro" target="_blank" rel="noopener" aria-label="Visit JP Silva's GitHub profile">
+                GitHub
+            </a>
             <!-- Add more social links as needed -->
         </div>
         <p><span data-translate-key="footer_copyright">© 2023 JP Silva. All rights reserved.</span></p>
     </footer>
+
+    <!-- Scripts -->
     <script src="js/translate.js" defer></script>
+
+    <!-- Optional: Add mobile menu functionality -->
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
+                    navMenu.classList.toggle('active');
+
+                    // Toggle hamburger animation
+                    menuToggle.classList.toggle('active');
+                });
+
+                // Close menu when clicking on a link
+                navMenu.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

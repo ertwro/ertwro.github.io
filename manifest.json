@@ -1,0 +1,27 @@
+{
+  "name": "JP Silva - Professional Website",
+  "short_name": "JP Silva",
+  "description": "Personal website of JP Silva - General Practitioner Physician with expertise in programming and fitness",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2a6c",
+  "theme_color": "#1a2a6c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["health", "education", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
