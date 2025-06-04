@@ -33,8 +33,8 @@ class TranslationManager {
                 "es": "CV"
             },
             "nav_presentations": {
-                "en": "Presentations",
-                "es": "Presentaciones"
+                "en": "Medicine",
+                "es": "Medicina"
             },
             "nav_programming": {
                 "en": "Programming",
