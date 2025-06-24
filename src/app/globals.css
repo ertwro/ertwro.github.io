@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-white bg-hero-gradient min-h-screen leading-relaxed;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply absolute -top-10 left-2 bg-white text-primary-600 px-4 py-3 text-sm font-semibold rounded-md shadow-lg z-[2000] opacity-0 focus:opacity-100 focus:top-2 transition-all duration-200;
+  }
+  
+  .nav-blur {
+    @apply bg-white/10 backdrop-blur-xl border-b border-white/10;
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .translating {
+    @apply opacity-70 transition-opacity duration-200;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+}
