@@ -27,8 +27,8 @@ class TranslationManager {
 
             // Hero
             "hero_subtitle": {
-                "en": "M.D. — Theoretical Physics, Topology & Combinatorics",
-                "es": "M.D. — Física Teórica, Topología y Combinatoria"
+                "en": "M.D. — Theoretical Physics, Topology & Medical Education",
+                "es": "M.D. — Física Teórica, Topología y Educación Médica"
             },
             "hero_tagline": {
                 "en": "Exploring what discrete causal structure can tell us about fundamental physics.",
