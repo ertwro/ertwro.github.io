@@ -87,6 +87,12 @@ class TranslationManager {
                 "es": "ensamble rápido"
             },
 
+            // Book
+            "btn_amazon": {
+                "en": "Available on Amazon",
+                "es": "Disponible en Amazon"
+            },
+
             // Publications
             "pub_title": {
                 "en": "Publications",
@@ -108,17 +114,14 @@ class TranslationManager {
                 "en": "Formal proof architecture for the Kislitsyn-Fredman conjecture. Six-phase proof by contradiction, partially formalized in Lean 4 with Mathlib 4.",
                 "es": "Arquitectura de demostración formal para la conjetura de Kislitsyn-Fredman. Demostración en seis fases por contradicción, parcialmente formalizada en Lean 4 con Mathlib 4."
             },
-            "pub_method_tag": {
-                "en": "Methodology",
-                "es": "Metodología"
+
+            "pub_platform_tag": {
+                "en": "Platform",
+                "es": "Plataforma"
             },
-            "pub_caf_title": {
-                "en": "The Compiler Attack Framework",
-                "es": "El Marco de Ataque del Compilador"
-            },
-            "pub_caf_desc": {
-                "en": "A Velleman/Polya protocol for AI-assisted mathematical discovery. Extracted from 19 phases of the Kuratowski Hadron Spectrum project. Includes the Domain Exhaustion Ladder, Failure Shape Classification, and Syntax Firewall.",
-                "es": "Un protocolo Velleman/Polya para descubrimiento matemático asistido por IA. Extraído de 19 fases del proyecto del Espectro Hadrónico de Kuratowski. Incluye la Escalera de Agotamiento de Dominio, Clasificación de Formas de Fallo y Cortafuegos Sintáctico."
+            "pub_cm_desc": {
+                "en": "A bilingual medical education platform covering multiple clinical specialties. Built with Vite, Tailwind CSS, and Python automation for structured content generation, search indexing, and modular specialty pages.",
+                "es": "Una plataforma bilingue de educación médica que cubre múltiples especialidades clínicas. Construida con Vite, Tailwind CSS y automatización en Python para generación estructurada de contenido, indexación de búsqueda y páginas modulares por especialidad."
             },
 
             // Open Source
@@ -134,13 +137,9 @@ class TranslationManager {
                 "en": "Formal proof of the 1/3-2/3 Poset Conjecture.",
                 "es": "Demostración formal de la Conjetura 1/3-2/3 de Posets."
             },
-            "repo_zotero": {
-                "en": "Neovim telescope plugin for Zotero references.",
-                "es": "Plugin de telescope para Neovim para referencias de Zotero."
-            },
             "repo_medicine": {
-                "en": "Medical presentation and conduct platform.",
-                "es": "Plataforma de presentación y conducta médica."
+                "en": "Bilingual medical education platform. Multi-specialty clinical content with automated navigation and search.",
+                "es": "Plataforma bilingue de educación médica. Contenido clínico multiespecialidad con navegación automatizada y búsqueda."
             },
 
             // Footer
