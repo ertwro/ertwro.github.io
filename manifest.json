@@ -1,11 +1,11 @@
 {
-  "name": "JP Silva - Professional Website",
-  "short_name": "JP Silva",
-  "description": "Personal website of JP Silva - General Practitioner Physician with expertise in programming and fitness",
+  "name": "Juan Pablo Silva Alvarado — Discrete Spacetime Research",
+  "short_name": "JPSA",
+  "description": "Physician and independent researcher in theoretical physics, topology, and combinatorics.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a2a6c",
-  "theme_color": "#1a2a6c",
+  "background_color": "#060a13",
+  "theme_color": "#060a13",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -21,7 +21,7 @@
       "purpose": "maskable any"
     }
   ],
-  "categories": ["health", "education", "productivity"],
+  "categories": ["science", "research", "physics"],
   "lang": "en",
   "dir": "ltr"
 }

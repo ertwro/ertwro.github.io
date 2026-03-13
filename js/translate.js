@@ -1,91 +1,158 @@
-/**
- * Enhanced Translation System
- * Features:
- * - Better language detection
- * - Smooth transitions
- * - Fallback handling
- * - Browser language detection
- * - RTL support preparation
- * - Performance optimizations
- */
-
 class TranslationManager {
     constructor() {
         this.currentLanguage = 'en';
         this.supportedLanguages = ['en', 'es'];
         this.fallbackLanguage = 'en';
-        this.storageKey = 'jp_website_language';
+        this.storageKey = 'jpsa_website_language';
         this.isTranslating = false;
 
-        // Enhanced translations object with better organization
         this.translations = {
             // Navigation
-            "nav_home": {
-                "en": "Home",
-                "es": "Inicio"
+            "nav_research": {
+                "en": "Research",
+                "es": "Investigación"
             },
-            "nav_about": {
-                "en": "About",
-                "es": "Acerca de"
+            "nav_engine": {
+                "en": "Tools",
+                "es": "Herramientas"
             },
-            "nav_cv": {
-                "en": "CV",
-                "es": "CV"
+            "nav_publications": {
+                "en": "Publications",
+                "es": "Publicaciones"
             },
-            "nav_presentations": {
-                "en": "Medicine",
-                "es": "Medicina"
-            },
-            "nav_programming": {
-                "en": "Programming",
-                "es": "Programación"
-            },
-            "nav_exercising": {
-                "en": "Exercising",
-                "es": "Ejercicio"
+            "nav_code": {
+                "en": "Code",
+                "es": "Código"
             },
 
-            // Hero Section
-            "hero_title": {
-                "en": "Meet JP Silva",
-                "es": "Conoce a JP Silva"
-            },
+            // Hero
             "hero_subtitle": {
-                "en": "A dedicated General Practitioner Physician with a passion for programming and fitness.",
-                "es": "Un médico general dedicado con pasión por la programación y el fitness."
+                "en": "M.D. — Theoretical Physics, Topology & Combinatorics",
+                "es": "M.D. — Física Teórica, Topología y Combinatoria"
             },
-            "hero_cta_button": {
-                "en": "View My CV",
-                "es": "Ver Mi CV"
+            "hero_tagline": {
+                "en": "Exploring what discrete causal structure can tell us about fundamental physics.",
+                "es": "Explorando lo que la estructura causal discreta puede decirnos sobre la física fundamental."
+            },
+
+            // Research
+            "research_title": {
+                "en": "Research",
+                "es": "Investigación"
+            },
+            "axiom1_title": {
+                "en": "The Kuratowski Calculus",
+                "es": "El Cálculo de Kuratowski"
+            },
+            "axiom1_desc": {
+                "en": "A framework for discrete spacetime built on causal set theory and graph planarity. The central object is a finite directed acyclic graph whose local topology is constrained by Kuratowski\u2019s theorem. The calculus studies what emerges when planarity violations are resolved dynamically.",
+                "es": "Un marco para el espaciotiempo discreto construido sobre la teoría de conjuntos causales y la planaridad de grafos. El objeto central es un grafo acíclico dirigido finito cuya topología local está restringida por el teorema de Kuratowski. El cálculo estudia lo que emerge cuando las violaciones de planaridad se resuelven dinámicamente."
+            },
+            "axiom2_title": {
+                "en": "Discrete Spacetime & Combinatorial Topology",
+                "es": "Espaciotiempo Discreto y Topología Combinatoria"
+            },
+            "axiom2_desc": {
+                "en": "My work sits at the intersection of causal set theory, graph theory, and combinatorics. I study how topological obstructions in finite posets\u2014specifically K\u2085 and K\u2083\u2083 subdivisions\u2014can serve as a dynamical principle, and what physical structure this implies.",
+                "es": "Mi trabajo se sitúa en la intersección de la teoría de conjuntos causales, la teoría de grafos y la combinatoria. Estudio cómo las obstrucciones topológicas en posets finitos\u2014específicamente las subdivisiones de K\u2085 y K\u2083\u2083\u2014pueden servir como principio dinámico, y qué estructura física implica esto."
+            },
+            "what_emerges_title": {
+                "en": "Current Direction",
+                "es": "Dirección Actual"
+            },
+            "what_emerges_desc": {
+                "en": "The programme explores whether a minimal combinatorial substrate\u2014a Poisson-sprinkled DAG with planarity enforcement\u2014is sufficient to reproduce known physics. Ongoing work includes numerical simulation, formal verification in Lean 4, and the development of a hadron spectrum from Kirchhoff polynomial counting on causal subgraphs.",
+                "es": "El programa explora si un sustrato combinatorio mínimo\u2014un DAG rociado por Poisson con aplicación de planaridad\u2014es suficiente para reproducir la física conocida. El trabajo en curso incluye simulación numérica, verificación formal en Lean 4, y el desarrollo de un espectro hadrónico a partir del conteo de polinomios de Kirchhoff en subgrafos causales."
+            },
+
+            // Engine
+            "engine_title": {
+                "en": "Computational Tools",
+                "es": "Herramientas Computacionales"
+            },
+            "engine_desc": {
+                "en": "A Rust simulation engine for exploring the Kuratowski Calculus numerically. Each realization passes through Poisson sprinkling, Kuratowski contraction, spectral dimension measurement, and 15 topological measurements (M1\u2013M15). Designed for ensemble statistics at scale\u2014O(N) per realization, deterministic seeding, binary checkpointing.",
+                "es": "Un motor de simulación en Rust para explorar el Cálculo de Kuratowski numéricamente. Cada realización pasa por rociado de Poisson, contracción de Kuratowski, medición de dimensión espectral, y 15 mediciones topológicas (M1\u2013M15). Diseñado para estadísticas de ensamble a escala\u2014O(N) por realización, semilla determinista, checkpointing binario."
+            },
+            "stat_params": {
+                "en": "free parameters",
+                "es": "parámetros libres"
+            },
+            "stat_measurements": {
+                "en": "measurements",
+                "es": "mediciones"
+            },
+            "stat_time": {
+                "en": "quick ensemble",
+                "es": "ensamble rápido"
+            },
+
+            // Publications
+            "pub_title": {
+                "en": "Publications",
+                "es": "Publicaciones"
+            },
+            "pub_kc_desc": {
+                "en": "The foundational mathematical framework. 10 chapters covering discrete calculus, emergent gravity, dessins d'enfants, hadron spectrum, particle decay, and modular interference. 110+ pages with formal axiom reference.",
+                "es": "El marco matemático fundacional. 10 capítulos que cubren cálculo discreto, gravedad emergente, dessins d'enfants, espectro hadrónico, decaimiento de partículas e interferencia modular. 110+ páginas con referencia axiomática formal."
+            },
+            "pub_feg_desc": {
+                "en": "The Rust simulation engine for the Kuratowski Calculus. 15 measurement modules, adaptive ensemble averaging, binary checkpointing, and deterministic seeding for reproducible topological experiments.",
+                "es": "El motor de simulación en Rust para el Cálculo de Kuratowski. 15 módulos de medición, promediado adaptativo de ensamble, checkpointing binario, y semilla determinista para experimentos topológicos reproducibles."
+            },
+            "pub_13_title": {
+                "en": "The 1/3\u20132/3 Poset Conjecture",
+                "es": "La Conjetura 1/3\u20132/3 de Posets"
+            },
+            "pub_13_desc": {
+                "en": "Formal proof architecture for the Kislitsyn-Fredman conjecture. Six-phase proof by contradiction, partially formalized in Lean 4 with Mathlib 4.",
+                "es": "Arquitectura de demostración formal para la conjetura de Kislitsyn-Fredman. Demostración en seis fases por contradicción, parcialmente formalizada en Lean 4 con Mathlib 4."
+            },
+            "pub_method_tag": {
+                "en": "Methodology",
+                "es": "Metodología"
+            },
+            "pub_caf_title": {
+                "en": "The Compiler Attack Framework",
+                "es": "El Marco de Ataque del Compilador"
+            },
+            "pub_caf_desc": {
+                "en": "A Velleman/Polya protocol for AI-assisted mathematical discovery. Extracted from 19 phases of the Kuratowski Hadron Spectrum project. Includes the Domain Exhaustion Ladder, Failure Shape Classification, and Syntax Firewall.",
+                "es": "Un protocolo Velleman/Polya para descubrimiento matemático asistido por IA. Extraído de 19 fases del proyecto del Espectro Hadrónico de Kuratowski. Incluye la Escalera de Agotamiento de Dominio, Clasificación de Formas de Fallo y Cortafuegos Sintáctico."
+            },
+
+            // Open Source
+            "code_title": {
+                "en": "Open Source",
+                "es": "Código Abierto"
+            },
+            "repo_feg": {
+                "en": "Simulation engine for the Kuratowski Calculus.",
+                "es": "Motor de simulación para el Cálculo de Kuratowski."
+            },
+            "repo_13": {
+                "en": "Formal proof of the 1/3-2/3 Poset Conjecture.",
+                "es": "Demostración formal de la Conjetura 1/3-2/3 de Posets."
+            },
+            "repo_zotero": {
+                "en": "Neovim telescope plugin for Zotero references.",
+                "es": "Plugin de telescope para Neovim para referencias de Zotero."
+            },
+            "repo_medicine": {
+                "en": "Medical presentation and conduct platform.",
+                "es": "Plataforma de presentación y conducta médica."
             },
 
             // Footer
-            "footer_copyright": {
-                "en": "© 2023 JP Silva. All rights reserved.",
-                "es": "© 2023 JP Silva. Todos los derechos reservados."
-            },
-
-            // Common phrases that might be used across pages
-            "loading": {
-                "en": "Loading...",
-                "es": "Cargando..."
-            },
-            "error": {
-                "en": "Error loading content",
-                "es": "Error al cargar el contenido"
-            },
-            "back_to_top": {
-                "en": "Back to top",
-                "es": "Volver arriba"
+            "footer_quote": {
+                "en": "\"The universe is strictly computable, finite, and structurally homeostatic. The rest is just counting.\"",
+                "es": "\"El universo es estrictamente computable, finito y estructuralmente homeostático. El resto es solo contar.\""
             }
         };
 
         this.init();
     }
 
-    /**
-     * Initialize the translation system
-     */
     init() {
         this.detectBrowserLanguage();
         this.loadSavedLanguage();
@@ -93,39 +160,25 @@ class TranslationManager {
         this.updateLanguageButtons();
     }
 
-    /**
-     * Detect browser's preferred language
-     */
     detectBrowserLanguage() {
         const browserLang = navigator.language || navigator.userLanguage;
         const langCode = browserLang.split('-')[0].toLowerCase();
-
         if (this.supportedLanguages.includes(langCode)) {
             this.currentLanguage = langCode;
         }
     }
 
-    /**
-     * Load saved language from localStorage or use detected language
-     */
     loadSavedLanguage() {
         try {
             const savedLang = localStorage.getItem(this.storageKey);
             if (savedLang && this.supportedLanguages.includes(savedLang)) {
                 this.currentLanguage = savedLang;
             }
-        } catch (error) {
-            console.warn('Could not access localStorage:', error);
-        }
-
+        } catch (e) { /* localStorage unavailable */ }
         this.setLanguage(this.currentLanguage, false);
     }
 
-    /**
-     * Set up event listeners for language buttons
-     */
     setupEventListeners() {
-        // Wait for DOM to be ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.attachButtonListeners());
         } else {
@@ -133,9 +186,6 @@ class TranslationManager {
         }
     }
 
-    /**
-     * Attach event listeners to language buttons
-     */
     attachButtonListeners() {
         this.supportedLanguages.forEach(lang => {
             const button = document.getElementById(`lang-${lang}`);
@@ -148,242 +198,49 @@ class TranslationManager {
         });
     }
 
-    /**
-     * Set the active language
-     * @param {string} lang - Language code
-     * @param {boolean} animate - Whether to animate the transition
-     */
     async setLanguage(lang, animate = true) {
-        if (!this.supportedLanguages.includes(lang)) {
-            console.warn(`Language '${lang}' is not supported`);
-            return;
-        }
-
-        if (this.isTranslating) {
-            return; // Prevent multiple simultaneous translations
-        }
+        if (!this.supportedLanguages.includes(lang) || this.isTranslating) return;
 
         this.isTranslating = true;
         this.currentLanguage = lang;
 
-        // Add loading state if animating
-        if (animate) {
-            document.body.classList.add('translating');
-        }
+        if (animate) document.body.classList.add('translating');
 
         try {
-            // Small delay for smooth animation
-            if (animate) {
-                await this.delay(100);
-            }
-
+            if (animate) await new Promise(r => setTimeout(r, 80));
             this.translateElements();
             this.updateLanguageButtons();
-            this.updateDocumentLanguage();
+            document.documentElement.lang = lang;
             this.saveLanguage();
-
-            // Dispatch custom event for other scripts to listen to
-            this.dispatchLanguageChangeEvent(lang);
-
-        } catch (error) {
-            console.error('Error during translation:', error);
         } finally {
             this.isTranslating = false;
-
-            if (animate) {
-                // Remove loading state after a short delay
-                setTimeout(() => {
-                    document.body.classList.remove('translating');
-                }, 200);
-            }
+            if (animate) setTimeout(() => document.body.classList.remove('translating'), 150);
         }
     }
 
-    /**
-     * Translate all elements with data-translate-key attribute
-     */
     translateElements() {
-        const elements = document.querySelectorAll('[data-translate-key]');
-
-        elements.forEach(element => {
-            const key = element.getAttribute('data-translate-key');
-            const translation = this.getTranslation(key);
-
-            if (translation) {
-                // Handle different element types
-                if (element.tagName === 'INPUT' && element.type === 'text') {
-                    element.placeholder = translation;
-                } else if (element.tagName === 'IMG') {
-                    element.alt = translation;
-                } else {
-                    element.textContent = translation;
-                }
-            }
+        document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.getAttribute('data-translate-key');
+            const t = this.translations[key];
+            if (!t) return;
+            const text = t[this.currentLanguage] || t[this.fallbackLanguage];
+            if (text) el.textContent = text;
         });
     }
 
-    /**
-     * Get translation for a specific key
-     * @param {string} key - Translation key
-     * @returns {string|null} - Translated text or null if not found
-     */
-    getTranslation(key) {
-        if (this.translations[key] && this.translations[key][this.currentLanguage]) {
-            return this.translations[key][this.currentLanguage];
-        }
-
-        // Fallback to default language
-        if (this.translations[key] && this.translations[key][this.fallbackLanguage]) {
-            console.warn(`Translation missing for '${key}' in '${this.currentLanguage}', using fallback`);
-            return this.translations[key][this.fallbackLanguage];
-        }
-
-        console.warn(`Translation missing for key: '${key}'`);
-        return null;
-    }
-
-    /**
-     * Update the active state of language buttons
-     */
     updateLanguageButtons() {
         this.supportedLanguages.forEach(lang => {
-            const button = document.getElementById(`lang-${lang}`);
-            if (button) {
-                if (lang === this.currentLanguage) {
-                    button.classList.add('active');
-                    button.setAttribute('aria-pressed', 'true');
-                } else {
-                    button.classList.remove('active');
-                    button.setAttribute('aria-pressed', 'false');
-                }
-            }
+            const btn = document.getElementById(`lang-${lang}`);
+            if (!btn) return;
+            btn.classList.toggle('active', lang === this.currentLanguage);
+            btn.setAttribute('aria-pressed', lang === this.currentLanguage ? 'true' : 'false');
         });
     }
 
-    /**
-     * Update the document's language attribute
-     */
-    updateDocumentLanguage() {
-        document.documentElement.lang = this.currentLanguage;
-
-        // Update direction for RTL languages (future enhancement)
-        const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
-        if (rtlLanguages.includes(this.currentLanguage)) {
-            document.documentElement.dir = 'rtl';
-        } else {
-            document.documentElement.dir = 'ltr';
-        }
-    }
-
-    /**
-     * Save current language to localStorage
-     */
     saveLanguage() {
-        try {
-            localStorage.setItem(this.storageKey, this.currentLanguage);
-        } catch (error) {
-            console.warn('Could not save language to localStorage:', error);
-        }
-    }
-
-    /**
-     * Dispatch custom event when language changes
-     * @param {string} lang - New language code
-     */
-    dispatchLanguageChangeEvent(lang) {
-        const event = new CustomEvent('languageChanged', {
-            detail: {
-                language: lang,
-                previousLanguage: this.currentLanguage
-            }
-        });
-        document.dispatchEvent(event);
-    }
-
-    /**
-     * Add new translations dynamically (useful for additional pages)
-     * @param {Object} newTranslations - Object containing new translation keys
-     */
-    addTranslations(newTranslations) {
-        Object.assign(this.translations, newTranslations);
-    }
-
-    /**
-     * Get current language
-     * @returns {string} Current language code
-     */
-    getCurrentLanguage() {
-        return this.currentLanguage;
-    }
-
-    /**
-     * Get supported languages
-     * @returns {Array} Array of supported language codes
-     */
-    getSupportedLanguages() {
-        return [...this.supportedLanguages];
-    }
-
-    /**
-     * Utility function to create a delay
-     * @param {number} ms - Milliseconds to delay
-     * @returns {Promise}
-     */
-    delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    /**
-     * Format text based on language (for future use with numbers, dates, etc.)
-     * @param {string} type - Type of formatting (number, date, currency)
-     * @param {*} value - Value to format
-     * @returns {string} Formatted value
-     */
-    formatText(type, value) {
-        const locale = this.currentLanguage === 'es' ? 'es-ES' : 'en-US';
-
-        switch (type) {
-            case 'number':
-                return new Intl.NumberFormat(locale).format(value);
-            case 'currency':
-                return new Intl.NumberFormat(locale, {
-                    style: 'currency',
-                    currency: this.currentLanguage === 'es' ? 'EUR' : 'USD'
-                }).format(value);
-            case 'date':
-                return new Intl.DateTimeFormat(locale).format(new Date(value));
-            default:
-                return value.toString();
-        }
+        try { localStorage.setItem(this.storageKey, this.currentLanguage); } catch (e) { /* */ }
     }
 }
 
-// Initialize the translation system
 const translationManager = new TranslationManager();
-
-// Export for potential use in other scripts
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = TranslationManager;
-}
-
-// Make it globally available
 window.TranslationManager = translationManager;
-
-// Example of listening to language change events
-document.addEventListener('languageChanged', (event) => {
-    console.log(`Language changed to: ${event.detail.language}`);
-    // You can add additional logic here, such as:
-    // - Loading different stylesheets for different languages
-    // - Updating analytics
-    // - Loading language-specific content
-});
-
-// Keyboard shortcut for language switching (Ctrl/Cmd + L)
-document.addEventListener('keydown', (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key === 'l') {
-        event.preventDefault();
-        const currentLang = translationManager.getCurrentLanguage();
-        const nextLang = currentLang === 'en' ? 'es' : 'en';
-        translationManager.setLanguage(nextLang);
-    }
-});

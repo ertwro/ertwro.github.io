@@ -3,66 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="JP Silva - General Practitioner Physician with expertise in programming and fitness">
-    <meta name="keywords" content="JP Silva, General Practitioner, Physician, Programming, Fitness, Healthcare">
-    <meta name="author" content="JP Silva">
+    <meta name="description" content="Juan Pablo Silva Alvarado — Physician and independent researcher in theoretical physics. Working on the Kuratowski Calculus, discrete spacetime, and combinatorial topology.">
+    <meta name="keywords" content="Juan Pablo Silva Alvarado, Modulo Synthesis, Kuratowski Calculus, Fractal Entropic Geometrodynamics, causal set theory, discrete spacetime, topology, combinatorics, theoretical physics">
+    <meta name="author" content="Juan Pablo Silva Alvarado">
 
-    <!-- Open Graph meta tags for social sharing -->
-    <meta property="og:title" content="JP Silva - General Practitioner & Developer">
-    <meta property="og:description" content="A dedicated General Practitioner Physician with a passion for programming and fitness">
+    <meta property="og:title" content="Juan Pablo Silva Alvarado">
+    <meta property="og:description" content="Physician and independent researcher in theoretical physics, topology, and combinatorics.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ertwro.github.io/">
 
-    <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="JP Silva - General Practitioner & Developer">
-    <meta name="twitter:description" content="A dedicated General Practitioner Physician with a passion for programming and fitness">
+    <meta name="twitter:title" content="Juan Pablo Silva Alvarado">
+    <meta name="twitter:description" content="Physician and independent researcher in theoretical physics, topology, and combinatorics.">
 
-    <title>JP Silva - General Practitioner & Developer</title>
+    <title>Juan Pablo Silva Alvarado</title>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="js/translate.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicon (add your own favicon.ico to the root directory) -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#1a2a6c">
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!-- Manifest for PWA capabilities (optional) -->
+    <meta name="theme-color" content="#060a13">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-    <!-- Navigation Bar -->
+    <!-- Ambient background -->
+    <canvas id="dag-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
     <nav role="navigation" aria-label="Main navigation">
         <div class="logo">
-            <h1>JP Silva</h1>
+            <h1>JPSA</h1>
         </div>
-
-        <!-- Mobile menu toggle button -->
         <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
-
         <ul class="nav-menu">
-            <li><a href="index.html" aria-current="page"><span data-translate-key="nav_home">Home</span></a></li>
-            <li><a href="about.html"><span data-translate-key="nav_about">About</span></a></li>
-            <li><a href="cvjpsa.pdf" target="_blank" rel="noopener"><span data-translate-key="nav_cv">CV</span></a></li>
-            <li><a href="conduct_medicine/index.html"><span data-translate-key="nav_presentations">Medicine</span></a></li>
-            <li><a href="programming.html"><span data-translate-key="nav_programming">Programming</span></a></li>
-            <li><a href="exercising.html"><span data-translate-key="nav_exercising">Exercising</span></a></li>
+            <li><a href="#research"><span data-translate-key="nav_research">Research</span></a></li>
+            <li><a href="#engine"><span data-translate-key="nav_engine">Tools</span></a></li>
+            <li><a href="#publications"><span data-translate-key="nav_publications">Publications</span></a></li>
+            <li><a href="#open-source"><span data-translate-key="nav_code">Code</span></a></li>
+            <li><a href="cvjpsa.pdf" target="_blank" rel="noopener">CV</a></li>
             <li>
                 <button id="lang-en" aria-label="Switch to English" aria-pressed="true">EN</button>
             </li>
@@ -74,83 +58,166 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
+
+        <!-- Hero -->
         <section class="hero" aria-labelledby="hero-title">
-            <h1 id="hero-title"><span data-translate-key="hero_title">Meet JP Silva</span></h1>
-            <p><span data-translate-key="hero_subtitle">A dedicated General Practitioner Physician with a passion for programming and fitness.</span></p>
-            <a href="cvjpsa.pdf" class="cta-button" target="_blank" rel="noopener">
-                <span data-translate-key="hero_cta_button">View My CV</span>
-            </a>
+            <div class="hero-content reveal">
+                <div class="hero-photo">
+                    <div class="photo-ring">
+                        <img src="headshotjp.png" alt="Juan Pablo Silva Alvarado" width="220" height="220" loading="eager">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <p class="hero-label">Independent Researcher</p>
+                    <h1 id="hero-title">Juan Pablo<br>Silva Alvarado</h1>
+                    <p class="hero-subtitle"><span data-translate-key="hero_subtitle">M.D. &mdash; Theoretical Physics, Topology &amp; Combinatorics</span></p>
+                    <p class="hero-location">Bogot&aacute;, Colombia</p>
+                    <p class="hero-tagline"><span data-translate-key="hero_tagline">Exploring what discrete causal structure can tell us about fundamental physics.</span></p>
+                    <div class="hero-links">
+                        <a href="https://github.com/ertwro" target="_blank" rel="noopener" class="btn btn-outline" aria-label="GitHub">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://doi.org/10.5281/zenodo.18719774" target="_blank" rel="noopener" class="btn btn-outline" aria-label="Zenodo">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            Zenodo
+                        </a>
+                        <a href="https://x.com/ertwro" target="_blank" rel="noopener" class="btn btn-outline" aria-label="X / Twitter">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            X
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Research -->
+        <section id="research" class="section" aria-labelledby="research-title">
+            <h2 id="research-title" class="section-title reveal"><span data-translate-key="research_title">Research</span></h2>
+            <div class="research-grid">
+                <div class="card reveal">
+                    <div class="card-accent"></div>
+                    <h3><span data-translate-key="axiom1_title">The Kuratowski Calculus</span></h3>
+                    <p><span data-translate-key="axiom1_desc">A framework for discrete spacetime built on causal set theory and graph planarity. The central object is a finite directed acyclic graph whose local topology is constrained by Kuratowski's theorem. The calculus studies what emerges when planarity violations are resolved dynamically.</span></p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-accent"></div>
+                    <h3><span data-translate-key="axiom2_title">Discrete Spacetime &amp; Combinatorial Topology</span></h3>
+                    <p><span data-translate-key="axiom2_desc">My work sits at the intersection of causal set theory, graph theory, and combinatorics. I study how topological obstructions in finite posets&mdash;specifically K&#8325; and K&#8323;&#8323; subdivisions&mdash;can serve as a dynamical principle, and what physical structure this implies.</span></p>
+                </div>
+                <div class="card card-wide card-emerges reveal">
+                    <div class="card-accent"></div>
+                    <h3><span data-translate-key="what_emerges_title">Current Direction</span></h3>
+                    <p><span data-translate-key="what_emerges_desc">The programme explores whether a minimal combinatorial substrate&mdash;a Poisson-sprinkled DAG with planarity enforcement&mdash;is sufficient to reproduce known physics. Ongoing work includes numerical simulation, formal verification in Lean 4, and the development of a hadron spectrum from Kirchhoff polynomial counting on causal subgraphs.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engine -->
+        <section id="engine" class="section section-alt" aria-labelledby="engine-title">
+            <h2 id="engine-title" class="section-title reveal"><span data-translate-key="engine_title">Computational Tools</span></h2>
+            <div class="engine-block">
+                <div class="engine-desc reveal">
+                    <h3>FEG_prism</h3>
+                    <p><span data-translate-key="engine_desc">A Rust simulation engine for exploring the Kuratowski Calculus numerically. Each realization passes through Poisson sprinkling, Kuratowski contraction, spectral dimension measurement, and 15 topological measurements (M1&ndash;M15). Designed for ensemble statistics at scale&mdash;O(N) per realization, deterministic seeding, binary checkpointing.</span></p>
+                    <div class="engine-stats">
+                        <div class="stat reveal">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label"><span data-translate-key="stat_params">free parameters</span></span>
+                        </div>
+                        <div class="stat reveal">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label"><span data-translate-key="stat_measurements">measurements</span></span>
+                        </div>
+                        <div class="stat reveal">
+                            <span class="stat-value">3 min</span>
+                            <span class="stat-label"><span data-translate-key="stat_time">quick ensemble</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="engine-code reveal">
+                    <div class="terminal-bar">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">terminal</span>
+                    </div>
+<pre><code><span class="c"># Run a quick 6-realization ensemble</span>
+<span class="prompt">$</span> cargo run --release --bin feg_prism -- \
+    50000 6 ../data/quick_full --inmemory \
+    --measure-lagrangian --seed 42</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section" aria-labelledby="pub-title">
+            <h2 id="pub-title" class="section-title reveal"><span data-translate-key="pub_title">Publications</span></h2>
+            <div class="pub-grid">
+                <div class="pub-card reveal">
+                    <span class="pub-tag">Book</span>
+                    <h3>The Kuratowski Calculus: Modulo Synthesis</h3>
+                    <p class="pub-meta">ISBN: 979-8249815400 &middot; 2026</p>
+                    <p><span data-translate-key="pub_kc_desc">The foundational mathematical framework. 10 chapters covering discrete calculus, emergent gravity, dessins d'enfants, hadron spectrum, particle decay, and modular interference. 110+ pages with formal axiom reference.</span></p>
+                </div>
+                <div class="pub-card reveal">
+                    <span class="pub-tag">Software</span>
+                    <h3>Fractal Entropic Geometrodynamics</h3>
+                    <p class="pub-meta">DOI: <a href="https://doi.org/10.5281/zenodo.18719774" target="_blank" rel="noopener">10.5281/zenodo.18719774</a> &middot; MIT License</p>
+                    <p><span data-translate-key="pub_feg_desc">The Rust simulation engine for the Kuratowski Calculus. 15 measurement modules, adaptive ensemble averaging, binary checkpointing, and deterministic seeding for reproducible topological experiments.</span></p>
+                </div>
+                <div class="pub-card reveal">
+                    <span class="pub-tag">Lean 4</span>
+                    <h3><span data-translate-key="pub_13_title">The 1/3&ndash;2/3 Poset Conjecture</span></h3>
+                    <p class="pub-meta"><a href="https://github.com/ertwro/one_third_two_thirds" target="_blank" rel="noopener">github.com/ertwro/one_third_two_thirds</a></p>
+                    <p><span data-translate-key="pub_13_desc">Formal proof architecture for the Kislitsyn-Fredman conjecture. Six-phase proof by contradiction, partially formalized in Lean 4 with Mathlib 4.</span></p>
+                </div>
+                <div class="pub-card reveal">
+                    <span class="pub-tag"><span data-translate-key="pub_method_tag">Methodology</span></span>
+                    <h3><span data-translate-key="pub_caf_title">The Compiler Attack Framework</span></h3>
+                    <p><span data-translate-key="pub_caf_desc">A Velleman/Polya protocol for AI-assisted mathematical discovery. Extracted from 19 phases of the Kuratowski Hadron Spectrum project. Includes the Domain Exhaustion Ladder, Failure Shape Classification, and Syntax Firewall.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Source -->
+        <section id="open-source" class="section section-alt" aria-labelledby="code-title">
+            <h2 id="code-title" class="section-title reveal"><span data-translate-key="code_title">Open Source</span></h2>
+            <div class="repo-grid">
+                <a href="https://github.com/ertwro/fractal_entropic_geometrodynamics" target="_blank" rel="noopener" class="repo-card reveal">
+                    <h3>fractal_entropic_geometrodynamics</h3>
+                    <p>Rust &middot; MIT</p>
+                    <span class="repo-desc"><span data-translate-key="repo_feg">Simulation engine for the Kuratowski Calculus.</span></span>
+                </a>
+                <a href="https://github.com/ertwro/one_third_two_thirds" target="_blank" rel="noopener" class="repo-card reveal">
+                    <h3>one_third_two_thirds</h3>
+                    <p>Lean 4</p>
+                    <span class="repo-desc"><span data-translate-key="repo_13">Formal proof of the 1/3-2/3 Poset Conjecture.</span></span>
+                </a>
+                <a href="https://github.com/ertwro/telescope-zotero.nvim" target="_blank" rel="noopener" class="repo-card reveal">
+                    <h3>telescope-zotero.nvim</h3>
+                    <p>Lua</p>
+                    <span class="repo-desc"><span data-translate-key="repo_zotero">Neovim telescope plugin for Zotero references.</span></span>
+                </a>
+                <a href="https://github.com/ertwro/conduct_medicine" target="_blank" rel="noopener" class="repo-card reveal">
+                    <h3>conduct_medicine</h3>
+                    <p>JavaScript</p>
+                    <span class="repo-desc"><span data-translate-key="repo_medicine">Medical presentation and conduct platform.</span></span>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer role="contentinfo">
-
-        <div class="social-links">
-            <a href="https://github.com/ertwro" target="_blank" rel="noopener" aria-label="Visit JP Silva's GitHub profile">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                </svg>
-                GitHub
-            </a>
-            <a href="https://x.com/ertwro" target="_blank" rel="noopener" aria-label="Visit JP Silva's X profile">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                X
-            </a>
-            <a href="https://youtube.com/@ertwro" target="_blank" rel="noopener" aria-label="Visit JP Silva's YouTube channel">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-                </svg>
-                YouTube
-            </a>
+        <div class="footer-inner">
+            <p class="footer-quote"><span data-translate-key="footer_quote">&ldquo;The universe is strictly computable, finite, and structurally homeostatic. The rest is just counting.&rdquo;</span></p>
+            <p class="footer-copy">&copy; 2026 Juan Pablo Silva Alvarado</p>
         </div>
-            <!-- Add more social links as needed -->
-        </div>
-        <p><span data-translate-key="footer_copyright">© 2023 JP Silva. All rights reserved.</span></p>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/translate.js" defer></script>
-
-    <!-- Optional: Add mobile menu functionality -->
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function() {
-                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-
-                    menuToggle.setAttribute('aria-expanded', !isExpanded);
-                    navMenu.classList.toggle('active');
-
-                    // Toggle hamburger animation
-                    menuToggle.classList.toggle('active');
-                });
-
-                // Close menu when clicking on a link
-                navMenu.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'A') {
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        navMenu.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                    }
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        navMenu.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
